@@ -1,0 +1,22 @@
+
+one = zeros(5, 5)
+two = ones(5, 5) * 5
+imArithmetic(one, two, 'add')
+function g = imArithmetic(f1, f2, op)
+    switch op
+        case 'add'
+            g = f1+f2
+        case 'subtract'
+            g = f1-f2;
+        case 'multiply'            
+            g = f1.*f2;
+        case 'divide'
+            g = f1./f2;
+        otherwise
+            fprintf('Error');            
+    end
+    
+    gm = g - min(g);
+    gs = 255*(abs(gm./max(gm)));
+    g = gs;    
+end
