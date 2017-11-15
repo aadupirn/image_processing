@@ -1,5 +1,11 @@
-im = imread('Fig0219(rose1024).tif');
-histEqual(im);
+rose = imread('Fig0219(rose1024).tif');
+angiography = imread('Fig0228(b)(angiography_live_ image).tif');
+imageHist(rose, 'n')
+meanVariance(rose)
+imageHist(angiography, 'n')
+meanVariance(angiography)
+histEqual(rose)
+histEqual(angiography)
 function h = imageHist(f, op)
     switch op
         case 'u'
@@ -38,11 +44,9 @@ function g = histEqual(f)
     g = zeros(m, n);
     for i = 1 : m
        for j = 1 : n 
-          imageindex = f(i, j)
-          g(i, j) = eqhist(f(i, j));
+          imageindex = f(i, j) + 1;
+          g(i, j) = eqhist(imageindex);
        end
     end
-    imshow(g)
-    
-    
+    imshow(g, 'DisplayRange', [0, 255]);  
 end

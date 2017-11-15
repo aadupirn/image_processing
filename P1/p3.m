@@ -1,5 +1,11 @@
-im = imread('Fig0219(rose1024).tif');
-histEqual(im);
+rose = imread('Fig0219(rose1024).tif');
+angiography = imread('Fig0228(b)(angiography_live_ image).tif');
+imageHist(rose, 'n')
+meanVariance(rose)
+imageHist(angiography, 'n')
+meanVariance(angiography)
+histEqual(rose)
+histEqual(angiography)
 function h = imageHist(f, op)
     switch op
         case 'u'
