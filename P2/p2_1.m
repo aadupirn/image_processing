@@ -1,7 +1,7 @@
 test = double(imread('testpattern.tif'));
 [l, w] = size(test);
-filter = gaussKernal(w, 1.5);
-imshow(imfilter(test, filter));
+filter = gaussKernal(w, 10);
+imshow(imfilter(test, filter), 'DisplayRange', [0. 255]);
 
 function w = gaussKernal(m, sigma)
     mat = zeros(m, m);

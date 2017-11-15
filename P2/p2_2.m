@@ -5,11 +5,11 @@ unsharpmask = moon + mask;
 highboost = moon + 1.5*mask;
 laplacekernal = [0, -1, 0; -1, 4, -1; 0, -1, 0];
 laplace = moon+imfilter(moon, laplacekernal);
-figure, imshow(unsharpmask)
+figure, imshow(unsharpmask, 'DisplayRange', [0. 255])
 title('unsharp masking')
-figure, imshow(highboost)
+figure, imshow(highboost, 'DisplayRange', [0. 255])
 title('highboost')
-figure, imshow(laplace)
+figure, imshow(laplace, 'DisplayRange', [0. 255])
 title('Laplace filter')
 
 
