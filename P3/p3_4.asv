@@ -1,0 +1,14 @@
+building = imread('building.tif');
+figure, imshow(building,'DisplayRange',[0,255]);
+title('Original Building');
+figure
+
+
+function P = edgeMag(f, type, T)
+    [P, Q] = imgradient(f, 'prewitt')
+end
+
+function P = edgeAngle(f, type, T)
+
+
+end
