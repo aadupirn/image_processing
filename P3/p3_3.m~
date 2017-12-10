@@ -8,7 +8,7 @@ utkThin = morphoThin(utk, B);
 utkPruned = morphoPrun(utkThin, 1, 7);
 
 figure, imshowpair(utkThin, utkPruned, 'montage');
-title('c) Thinned UTK                                        d) Pruned UTK');
+title('c) Thinned UTK     d) Pruned UTK');
 
 function T = morphoThin(I,B)
     T = bwmorph(imbinarize(I), 'thin', 5);

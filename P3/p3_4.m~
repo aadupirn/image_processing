@@ -1,9 +1,9 @@
 building = imread('building.tif');
-magnitude = edgeMag(building, 'sobel', 0);
-figure, imshow(magnitude,'DisplayRange',[0,255]);
+magnitude = edgeMag(building, 'sobel', .5);
+figure, imshow(magnitude);
 title('Edge Magnitude Building');
-angle = edgeAngle(building, 'sobel', 1);
-figure, imshow(angle,'DisplayRange',[0,255]);
+magnitude = edgeAngle(building, 'sobel', .5);
+figure, imshow(magnitude,'DisplayRange',[0,255]);
 title('Angle Image Building');
 
 
